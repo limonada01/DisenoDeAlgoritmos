@@ -1,6 +1,6 @@
 import java.util.Set;
 
-public class App {
+public class set {
 
 
     public static void buildSet(int[] universe,int[] set){
