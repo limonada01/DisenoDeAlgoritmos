@@ -7,7 +7,7 @@ public class TRIETree {
         this.root=new Node();
     }
 
-    public void insertWord(String word){
+    public void insertWord(String word,String[] synonym){
         int lenghtWord = word.length();
         int index;
         Node aux=root;
@@ -18,8 +18,10 @@ public class TRIETree {
             }
             aux=aux.getChildrens()[index];
         }
-        aux.setEndWord(true);//indico que el nodo es hoja, es el final de una nueva palabra
+        aux.setWord(word,synonym);//indico que es el final de una nueva palabra/clave
     }
+
+    
 
     public boolean search(String word){
         boolean result=false;
@@ -34,6 +36,9 @@ public class TRIETree {
                 
                 if(i==lenghtWord-1){
                     result=aux.isEndWord();
+                    if(result){
+                        aux.printSynonym();
+                    }
                 }
             }else{
                 i=lenghtWord;//salgo del bucle
@@ -41,5 +46,9 @@ public class TRIETree {
             i++;
         }
         return result;
+    }
+
+    public void printWords(){
+        this.root.printWords();
     }
 }

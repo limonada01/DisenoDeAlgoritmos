@@ -1,17 +1,22 @@
 package ArbolTrie;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Node {
-    private static int ALPHABETLENGTH=26;
+    private static int ALPHABETLENGTH = 26;
+    private String word;
+    private Node[] childrens;// referencia un enlace segun la letra del abecedario a otro nodo
+    private List<String> synonym;
 
-    private Node[] childrens;//referencia un enlace segun la letra del abecedario a otro nodo
-    private boolean endWord;//indica si nos encontramos en el final de una palabra/clave
-
-    public Node(){
-        this.childrens=new Node[ALPHABETLENGTH];
-        for(int i=0;i<ALPHABETLENGTH;i++){
-            childrens[i]=null;
+    public Node() {
+        this.childrens = new Node[ALPHABETLENGTH];
+        this.word = null;
+        for (int i = 0; i < ALPHABETLENGTH; i++) {
+            childrens[i] = null;
         }
-        this.endWord=false;
+        this.synonym = null;
     }
 
     public Node[] getChildrens() {
@@ -22,12 +27,43 @@ public class Node {
         this.childrens = childrens;
     }
 
-    public boolean isEndWord() {
-        return endWord;
+    public void setWord(String word, String[] synonymArray) {
+        this.word = word;
+        if (this.synonym == null) {
+            this.synonym = new ArrayList<String>();
+        }
+        addSynonym(synonymArray);
     }
 
-    public void setEndWord(boolean endWord) {
-        this.endWord = endWord;
+    public boolean isEndWord() {
+        return this.word != null;// si no es igual a nulo, es un endWord node
     }
-    
+
+    public void addSynonym(String[] synonymArray) {
+        int lenght = synonymArray.length;
+        for (int i = 0; i < lenght; i++) {
+            this.synonym.add(synonymArray[i]);
+        }
+    }
+
+    public void printSynonym() {
+        int lenght = synonym.size();
+        System.out.println("Sinonimos para la palabra: " + this.word);
+        System.out.println(synonym.toString());
+        System.out.println("\n");
+    }
+
+    public void printWords() {
+        Node curr = this;
+        if (isEndWord()) {
+            System.out.println(this.word);
+        }
+        for (int i = 0; i < ALPHABETLENGTH; i++) {
+            if (curr.getChildrens()[i] != null) {
+                curr.getChildrens()[i].printWords();
+            }
+        }
+
+    }
+
 }
