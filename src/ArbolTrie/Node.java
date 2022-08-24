@@ -1,14 +1,14 @@
 package ArbolTrie;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import java.util.LinkedList;
 import java.util.List;
 
 public class Node {
     private static int ALPHABETLENGTH = 26;
     private String word;
     private Node[] childrens;// referencia un enlace segun la letra del abecedario a otro nodo
-    private List<String> synonym;
+    private LinkedList<String> synonym;
 
     public Node() {
         this.childrens = new Node[ALPHABETLENGTH];
@@ -30,7 +30,7 @@ public class Node {
     public void setWord(String word, String[] synonymArray) {
         this.word = word;
         if (this.synonym == null) {
-            this.synonym = new ArrayList<String>();
+            this.synonym = new LinkedList<String>();
         }
         addSynonym(synonymArray);
     }
