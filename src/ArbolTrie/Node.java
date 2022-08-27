@@ -47,7 +47,7 @@ public class Node {
     }
 
     public void printSynonym() {
-        int lenght = synonym.size();
+        //int lenght = synonym.size();
         System.out.println("Sinonimos para la palabra: " + this.word);
         System.out.println(synonym.toString());
         System.out.println("\n");
