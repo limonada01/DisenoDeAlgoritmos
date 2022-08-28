@@ -33,7 +33,6 @@ public class TRIETree {
             index=word.charAt(i)-'a';//obtengo la posicion correspondiente a la letra de la palabra en la que me encuentro
             if(aux.getChildrens()[index]!=null){
                 aux=aux.getChildrens()[index];
-                
                 if(i==lenghtWord-1){
                     result=aux.isEndWord();
                     if(result){

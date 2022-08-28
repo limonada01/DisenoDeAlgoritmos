@@ -31,7 +31,8 @@ public class conteo {
         char[] array={'a','B','Z','t','d','F','b','r'};
         //int res;
         //res=Character.compare(Character.toLowerCase('A'), Character.toLowerCase('a'));
-        //System.out.println(res);
+        //System.out.println(res);'
+        
         System.out.println(array);
         char[] sort=countingSort(array);
         System.out.println(sort);
