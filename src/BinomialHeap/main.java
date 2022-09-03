@@ -1,4 +1,4 @@
-package ArbolBinomial;
+package BinomialHeap;
 
 public class main {
     public static void main(String[] args) {
@@ -9,6 +9,6 @@ public class main {
         arbol.insert(41);
         arbol.insert(22);
         arbol.print();
-        System.out.println(arbol.findMinimum());
+        System.out.println(arbol.findMaximum());
     }
 }
