@@ -24,7 +24,7 @@ public class BinaryNum {
             array[i]=1;
             i--;
         }
-        if(i>0){
+        if(i>=0){
             array[i]=0; 
         }
     }
@@ -37,9 +37,12 @@ public class BinaryNum {
     }
 
     public static void main(String[] args) {
-        int[] inicio={0,0,1,1};
+        int[] inicio={1,0,0,0};
         BinaryNum num=new BinaryNum(inicio);
-        num.incrementar();
+        num.print();
+        num.decrementar();
+        num.print();
+       /*  num.incrementar();
         num.print();
         num.incrementar();
         num.print();
@@ -50,7 +53,7 @@ public class BinaryNum {
         num.decrementar();
         num.print();
         num.decrementar();
-        num.print();
+        num.print(); */
         //System.err.println(inicio[2]);
     }
     
