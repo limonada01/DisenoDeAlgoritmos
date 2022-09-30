@@ -16,7 +16,6 @@ public class Conference {
         int cantOradores = oradores.size();
         // recorre cada set de setRelevantes
         while (respuesta && i < n) {
-            System.out.println("HOLAAAAA");
             ArrayList aux = setRelevantes.get(i);
             m = setRelevantes.get(i).size();
             j = 0;
@@ -38,7 +37,9 @@ public class Conference {
         ArrayList oradores = new ArrayList<Integer>();
         oradores.add(2);
         oradores.add(4);
+        
         ArrayList setRelevantes = new ArrayList<ArrayList>();
+
         ArrayList set1 = new ArrayList<Integer>();
         set1.add(1);
         set1.add(4);
@@ -54,9 +55,6 @@ public class Conference {
         setRelevantes.add(set2);
         setRelevantes.add(set3);
 
-       // System.out.println(set1);
-       // System.out.println(set1.retainAll(oradores));
-        //System.out.println(set1);
         System.out.println(verificarSolucion(oradores, setRelevantes));
     }
 }

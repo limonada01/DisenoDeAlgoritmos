@@ -57,7 +57,7 @@ public class StableAssignation {
                 // de la lista de preferencia de hombre m
                 int w = prefer[0][m][i];
                 //verifico que el hombre no tiene prohibido emparejarse con mujer w
-                // y que w no tiene prohibido emparejarse con m
+                // o que w no tiene prohibido emparejarse con m
                 if (prefer[1][m][w-N]==1 && prefer[1][w][m]==1) {
                     // si la mujer i que selecciona el hombre soltero m
                     // en su lista de preferencias no tiene pareja,
@@ -73,7 +73,7 @@ public class StableAssignation {
                     else {
                         int currentPartner = womanPartner[w - N];
                         // si la mujer w no prefiere a su actual pareja, la cambia por la nueva
-                        if (womanPrefersCurrentOverNew(prefer, w, m, currentPartner) == false) {
+                        if (womanPrefersCurrentOverNew(prefer, w, m, currentPartner) == false ) {
                             womanPartner[w - N] = m;
                             manEngaged[m] = true;
                             manEngaged[currentPartner] = false;
@@ -123,7 +123,7 @@ public class StableAssignation {
                         // ej: para el hombre 0 (primera fila), primera col= primera mujer (N+1),
                         // segunda col= segunda mujer (N+2)....
                         { 1, 1, 1 },
-                        { 1, 1, 0 },
+                        { 1, 1, 1 },
                         { 1, 1, 1 },
                         { 0, 1, 1 },
                         { 1, 1, 1 },
