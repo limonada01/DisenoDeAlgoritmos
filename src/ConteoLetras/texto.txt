@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-Este texto es una prueba para el algoritmo Este
-de cantidad de palabras en un texto 
-=======
-Este texto es una prueba para el algoritmo Este
-de cantidad de palabras en un texto 
->>>>>>> 75f1b65e0446b835697dbe8fe6f59addb7c9cb8d
-Este texto no es una prueba para el algoritmo de palabras
