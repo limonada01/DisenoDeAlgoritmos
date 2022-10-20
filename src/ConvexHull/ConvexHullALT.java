@@ -93,9 +93,6 @@ public class ConvexHullALT {
             
         }
 
-        //solucion.add(new ParPuntos(A, B));
-        //solucion.add(new ParPuntos(B, A));
-
         ArrayList<ParPuntos> Sol1=findHull(S1, A, B);
         ArrayList<ParPuntos> Sol2=findHull(S2, B, A);
         Sol1.addAll(Sol2);
@@ -119,10 +116,6 @@ public class ConvexHullALT {
                     c = puntos.get(i);
                 }
             }
-            //elimino el par AB del conjunto solucion y lo reemplazo por los pares Ac y cB
-            /* solucion.remove(new ParPuntos(A, B));
-            solucion.add(new ParPuntos(A, c));
-            solucion.add(new ParPuntos(c, B)); */
             
             //calculo los conjuntos de puntos que hay por sobre las rectas Ac (S1) y cB (S2) 
             ArrayList S1 = puntosCorrespondientes(puntos, A, c, B);
