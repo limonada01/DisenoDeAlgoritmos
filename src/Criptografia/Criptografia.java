@@ -7,9 +7,9 @@ public class Criptografia {
             return a;
         } else if (n % 2 == 0) {
             int b = expoDyV(a, n / 2);
-            return b * b;
+            return multiplicarDyV(b, b);
         } else {
-            return a * expoDyV(a, n - 1);
+            return multiplicarDyV(a, expoDyV(a, n - 1));
         }
     }
 
